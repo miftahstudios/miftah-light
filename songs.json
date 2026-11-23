@@ -1,0 +1,282 @@
+[
+ {
+  "id": "song-04",
+  "title": "أول ما وصلنا الحجرة",
+  "file": "songs/song-04.mp3",
+  "source": "أول ما وصلنا الحجرة.mp3",
+  "duration": 162.052
+ },
+ {
+  "id": "song-33",
+  "title": "هي هي هي المشاريع المحمية",
+  "file": "songs/song-33.mp3",
+  "source": "هي هي هي المشاريع المحمية.mp3",
+  "duration": 172.072
+ },
+ {
+  "id": "song-08",
+  "title": "الله يا عظيم",
+  "file": "songs/song-08.mp3",
+  "source": "الله يا عظيم.mp3",
+  "duration": 175.334
+ },
+ {
+  "id": "song-13",
+  "title": "زائر الروضة",
+  "file": "songs/song-13.mp3",
+  "source": "زائر الروضة.mp3",
+  "duration": 176.797
+ },
+ {
+  "id": "song-18",
+  "title": "طيبة لزورها",
+  "file": "songs/song-18.mp3",
+  "source": "طيبة لزورها.mp3",
+  "duration": 190.752
+ },
+ {
+  "id": "song-05",
+  "title": "افرحوا النّور أتانا",
+  "file": "songs/song-05.mp3",
+  "source": "افرحوا النّور أتانا.mp3",
+  "duration": 192.424
+ },
+ {
+  "id": "song-19",
+  "title": "عيوني تشتاقله",
+  "file": "songs/song-19.mp3",
+  "source": "عيوني تشتاقله.mp3",
+  "duration": 201.045
+ },
+ {
+  "id": "song-11",
+  "title": "تاجُ رُسْلِ اللهِ مُحمّد ﷺ",
+  "file": "songs/song-11.mp3",
+  "source": "تاجُ رُسْلِ اللهِ مُحمّد ﷺ.mp3",
+  "duration": 208.097
+ },
+ {
+  "id": "song-10",
+  "title": "برمضان تهنّينا",
+  "file": "songs/song-10.mp3",
+  "source": "برمضان تهنّينا.mp3",
+  "duration": 215.946
+ },
+ {
+  "id": "song-37",
+  "title": "يا بدورًا",
+  "file": "songs/song-37.mp3",
+  "source": "يا بدورًا.mp3",
+  "duration": 221.89
+ },
+ {
+  "id": "song-17",
+  "title": "صفه لي يا من رأيت الحب ليلا",
+  "file": "songs/song-17.mp3",
+  "source": "صفه لي يا من رأيت الحب ليلا.mp3",
+  "duration": 224.63
+ },
+ {
+  "id": "song-26",
+  "title": "محمد على نهجه نحيا",
+  "file": "songs/song-26.mp3",
+  "source": "محمد على نهجه نحيا.mp3",
+  "duration": 232.687
+ },
+ {
+  "id": "song-15",
+  "title": "شفاء الجراح",
+  "file": "songs/song-15.mp3",
+  "source": "شفاء الجراح.mp3",
+  "duration": 236.727
+ },
+ {
+  "id": "song-28",
+  "title": "من مثل أحمد",
+  "file": "songs/song-28.mp3",
+  "source": "من مثل أحمد.mp3",
+  "duration": 238.225
+ },
+ {
+  "id": "song-12",
+  "title": "ربنا الله الأحد",
+  "file": "songs/song-12.mp3",
+  "source": "ربنا الله الأحد.mp3",
+  "duration": 238.469
+ },
+ {
+  "id": "song-23",
+  "title": "لو أنهم علموا",
+  "file": "songs/song-23.mp3",
+  "source": "لو أنهم علموا.mp3",
+  "duration": 251.008
+ },
+ {
+  "id": "song-03",
+  "title": "أبو عمر",
+  "file": "songs/song-03.mp3",
+  "source": "أبو عمر.mp3",
+  "duration": 264.94
+ },
+ {
+  "id": "song-09",
+  "title": "المدد يا إلهي",
+  "file": "songs/song-09.mp3",
+  "source": "المدد يا إلهي.mp3",
+  "duration": 267.819
+ },
+ {
+  "id": "song-27",
+  "title": "محمد ﷺ مُهجة الأرواح",
+  "file": "songs/song-27.mp3",
+  "source": "محمد ﷺ مُهجة الأرواح.mp3",
+  "duration": 272.811
+ },
+ {
+  "id": "song-39",
+  "title": "يا طيبة",
+  "file": "songs/song-39.mp3",
+  "source": "يا طيبة.mp3",
+  "duration": 282.819
+ },
+ {
+  "id": "song-06",
+  "title": "الحبيب هو أنت",
+  "file": "songs/song-06.mp3",
+  "source": "الحبيب هو أنت.mp3",
+  "duration": 289.762
+ },
+ {
+  "id": "song-22",
+  "title": "لمولد حبيبي شوق شوق",
+  "file": "songs/song-22.mp3",
+  "source": "لمولد حبيبي شوق شوق.mp3",
+  "duration": 300.188
+ },
+ {
+  "id": "song-16",
+  "title": "شيلوني أهل الديوان",
+  "file": "songs/song-16.mp3",
+  "source": "شيلوني أهل الديوان.mp3",
+  "duration": 300.397
+ },
+ {
+  "id": "song-30",
+  "title": "هام قلبي",
+  "file": "songs/song-30.mp3",
+  "source": "هام قلبي.mp3",
+  "duration": 306.55
+ },
+ {
+  "id": "song-35",
+  "title": "يا أهل المدينة",
+  "file": "songs/song-35.mp3",
+  "source": "يا أهل المدينة.mp3",
+  "duration": 307.897
+ },
+ {
+  "id": "song-29",
+  "title": "ميدلي إرث العاشقين",
+  "file": "songs/song-29.mp3",
+  "source": "ميدلي إرث العاشقين.mp3",
+  "duration": 327.123
+ },
+ {
+  "id": "song-25",
+  "title": "ما في مثل الهادي أنشودة جديدة",
+  "file": "songs/song-25.mp3",
+  "source": "ما في مثل الهادي أنشودة جديدة.mp3",
+  "duration": 370.126
+ },
+ {
+  "id": "song-31",
+  "title": "هبَّنْ علينا",
+  "file": "songs/song-31.mp3",
+  "source": "هبَّنْ علينا.mp3",
+  "duration": 371.241
+ },
+ {
+  "id": "song-32",
+  "title": "هل حقا تشتاق إليه _ رقت عيناي شوقاً _ فريق المشاريع _ أمسية الأنس والغرام في توديع الحجاج الكرام",
+  "file": "songs/song-32.mp3",
+  "source": "هل حقا تشتاق إليه _ رقت عيناي شوقاً _ فريق المشاريع _ أمسية الأنس والغرام في توديع الحجاج الكرام.mp3",
+  "duration": 393.729
+ },
+ {
+  "id": "song-21",
+  "title": "لأهل البيت",
+  "file": "songs/song-21.mp3",
+  "source": "لأهل البيت.mp3",
+  "duration": 402.005
+ },
+ {
+  "id": "song-14",
+  "title": "سيد الأمة",
+  "file": "songs/song-14.mp3",
+  "source": "سيد الأمة.mp3",
+  "duration": 428.455
+ },
+ {
+  "id": "song-20",
+  "title": "في محاربة التشبيه والإلحاد",
+  "file": "songs/song-20.mp3",
+  "source": "في محاربة التشبيه والإلحاد.mp3",
+  "duration": 454.925
+ },
+ {
+  "id": "song-02",
+  "title": "أبا المساكين",
+  "file": "songs/song-02.mp3",
+  "source": "أبا المساكين.mp3",
+  "duration": 455.25
+ },
+ {
+  "id": "song-38",
+  "title": "يا سيدي غوثاه",
+  "file": "songs/song-38.mp3",
+  "source": "يا سيدي غوثاه.mp3",
+  "duration": 489.105
+ },
+ {
+  "id": "song-01",
+  "title": "Adam Ali لو ألقاه",
+  "file": "songs/song-01.mp3",
+  "source": "Adam Ali لو ألقاه.mp3",
+  "duration": 489.244
+ },
+ {
+  "id": "song-07",
+  "title": "الشوق إلى الحبيب المصطفى ﷺ",
+  "file": "songs/song-07.mp3",
+  "source": "الشوق إلى الحبيب المصطفى ﷺ.mp3",
+  "duration": 512.07
+ },
+ {
+  "id": "song-36",
+  "title": "يا امام الرسل",
+  "file": "songs/song-36.mp3",
+  "source": "يا امام الرسل.mp3",
+  "duration": 520.197
+ },
+ {
+  "id": "song-24",
+  "title": "لي في المدينة أحباب - سلامي على طه - انا ضيفك يا رسول الله",
+  "file": "songs/song-24.mp3",
+  "source": "لي في المدينة أحباب - سلامي على طه - انا ضيفك يا رسول الله.mp3",
+  "duration": 535.847
+ },
+ {
+  "id": "song-40",
+  "title": "يافقراء طيبو لسماعي السادة الأحباش",
+  "file": "songs/song-40.mp3",
+  "source": "يافقراء طيبو لسماعي السادة الأحباش.mp3",
+  "duration": 545.054
+ },
+ {
+  "id": "song-34",
+  "title": "هَيِّموني",
+  "file": "songs/song-34.mp3",
+  "source": "هَيِّموني.mp3",
+  "duration": 627.194
+ }
+]

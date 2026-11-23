@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#030805">
+  <meta name="description" content="A rhythm game of light: move a glowing orb on the beat and clear the shadows.">
+  <title>Madih Light</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+
+  <div id="hud" hidden>
+    <div class="hud-top">
+      <div class="hud-row">
+        <span id="hud-song" class="hud-song" dir="auto"></span>
+        <span id="hud-score" class="hud-score">0</span>
+        <button id="pause" class="icon-btn" aria-label="Pause">❚❚</button>
+      </div>
+      <div id="light" class="meter">
+        <span class="meter-label">Light</span>
+        <div class="meter-track"><div id="light-fill"></div></div>
+        <span id="light-value">100</span>
+      </div>
+      <div class="progress" aria-hidden="true"><div id="progress-fill"></div></div>
+    </div>
+    <div id="judge" class="judge"><span id="judge-text"></span><span id="judge-points"></span></div>
+    <p class="play-hint">Swipe to move · move into a shadow on the beat to clear it</p>
+    <canvas id="lane"></canvas>
+  </div>
+
+  <!-- Title screen -->
+  <section id="menu" class="panel" hidden>
+    <h1 class="logo">Madih Light</h1>
+    <p class="tagline">Clear away the darkness, one beat at a time.</p>
+    <div class="stack">
+      <button id="play" class="primary">Play</button>
+      <button data-go="howto">How to Play</button>
+      <button id="open-settings">Settings</button>
+    </div>
+  </section>
+
+  <!-- How to play -->
+  <section id="howto" class="panel panel-top" hidden>
+    <header class="bar">
+      <button class="back" data-go="menu">Back</button>
+      <h2>How to Play</h2>
+      <span class="spacer"></span>
+    </header>
+    <ol class="steps">
+      <li><strong>Move the orb.</strong> Swipe up, down, left or right (or use the arrow keys) to move one square.</li>
+      <li><strong>Move on the beat.</strong> Dots slide toward the ring at the bottom of the screen. Move when they meet it.</li>
+      <li><strong>Clear the shadows.</strong> Move into a shadow on the beat and your light bursts it. The closer to the beat, the better: Perfect, Great or Good.</li>
+      <li><strong>Keep your Light.</strong> A shadow that touches you takes 50 Light. Moves on the beat and cleared shadows give some back. Below 20, hits do half damage.</li>
+      <li><strong>Finish the song.</strong> Reach the end with Light left to complete it and open the next song.</li>
+    </ol>
+    <p class="hint">Shadows move one square every beat and enter from the edges of the board.</p>
+    <button class="primary" data-go="levels">Choose a song</button>
+  </section>
+
+  <!-- 3-2-1 before a song -->
+  <section id="countdown" class="panel" hidden>
+    <p id="count" class="count">3</p>
+    <p id="count-song" class="song-title" dir="auto"></p>
+    <p id="count-diff" class="hint"></p>
+  </section>
+
+  <!-- Pause -->
+  <section id="paused" class="panel" hidden>
+    <h2>Paused</h2>
+    <div class="stack">
+      <button id="resume" class="primary">Resume</button>
+      <button id="restart">Restart</button>
+      <button id="quit">Songs</button>
+    </div>
+  </section>
+
+  <!-- Song (level) select -->
+  <section id="levels" class="panel panel-top" hidden>
+    <header class="bar">
+      <button class="back" data-go="menu">Back</button>
+      <h2>Songs</h2>
+      <span class="spacer"></span>
+    </header>
+    <div class="row" role="group" aria-label="Difficulty">
+      <button data-difficulty="easy" class="diff">Easy<small>gentle pace</small></button>
+      <button data-difficulty="normal" class="diff">Normal<small>every beat</small></button>
+      <button data-difficulty="hard" class="diff">Hard<small>more shadows</small></button>
+    </div>
+    <p class="hint">Complete a song to open the next one.</p>
+    <ol id="song-list" class="song-list"></ol>
+  </section>
+
+  <!-- Settings -->
+  <section id="settings" class="panel" hidden>
+    <h2>Settings</h2>
+    <label class="field">Name on the leaderboard
+      <input id="name" type="text" maxlength="16" autocomplete="off" placeholder="Player">
+    </label>
+    <label class="field">Music volume <span id="volume-value"></span>
+      <input id="volume" type="range" min="0" max="1" step="0.05">
+    </label>
+    <label class="field">Timing offset <span id="offset-value"></span>
+      <input id="offset" type="range" min="-200" max="200" step="5">
+      <small>Raise it if your moves land late (for example with Bluetooth headphones).</small>
+    </label>
+    <button class="primary" data-go="menu">Done</button>
+  </section>
+
+  <section id="loading" class="panel" hidden>
+    <p id="loading-text">Loading…</p>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="panel panel-top" hidden>
+    <h2 id="result-title"></h2>
+    <p id="result-song" class="song-title" dir="auto"></p>
+    <p class="score"><span id="result-score">0</span><span id="new-best" class="tag" hidden>New best</span></p>
+    <dl id="result-stats"></dl>
+    <p id="unlocked" class="unlocked" hidden></p>
+    <div class="board-wrap">
+      <h3>Leaderboard</h3>
+      <ol id="leaderboard" class="leaderboard"></ol>
+    </div>
+    <div class="row">
+      <button id="next" class="primary" hidden>Next song</button>
+      <button id="retry">Play again</button>
+      <button data-go="levels">Songs</button>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

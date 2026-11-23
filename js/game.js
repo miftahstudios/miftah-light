@@ -10,13 +10,14 @@ const same = (a, b) => Math.abs(a.x - b.x) < EPS && Math.abs(a.z - b.z) < EPS;
 const onBoard = p => p.x >= -5 - EPS && p.x <= 5 + EPS && p.z >= -EPS && p.z <= 5 + EPS;
 const inArena = p => p.x >= -6.25 - EPS && p.x <= 6.25 + EPS && p.z >= -1.25 - EPS && p.z <= 6.25 + EPS;
 
-const MOVES = { up: { x: 0, z: 1 }, down: { x: 0, z: -1 }, left: { x: -1, z: 0 }, right: { x: 1, z: 0 } };
+export const MOVES = { up: { x: 0, z: 1 }, down: { x: 0, z: -1 }, left: { x: -1, z: 0 }, right: { x: 1, z: 0 } };
 
 export class Game {
-  constructor(chart, difficulty, events = {}) {
+  constructor(chart, difficulty, events = {}, opts = {}) {
     this.hits = chart.charts[difficulty];
     this.sched = C.SPAWN[difficulty];
     this.ev = events;
+    this.practice = !!opts.practice;   // no light loss, no fail, no saved score
     this.light = C.LIGHT_MAX;
     this.player = { ...C.PLAYER_START };
     this.wisps = [];
@@ -131,6 +132,7 @@ export class Game {
     w.spent = true; // the shadow passes through but can only hurt once
     this.stats.contacts++;
     this.emit('onContact', w);
+    if (this.practice) return; // practice: the touch costs nothing, the song never fails
     this.changeLight(-C.CONTACT_DAMAGE);
     if (this.light <= 0) this.end('out');
   }
@@ -141,7 +143,7 @@ export class Game {
     if (this.over) return;
     this.over = true;
     this.result = result;
-    if (result === 'complete') this.score += Math.round(this.light) * C.SCORE.lightLeft;
+    if (result === 'complete' && !this.practice) this.score += Math.round(this.light) * C.SCORE.lightLeft;
     this.emit('onEnd', result, this.stats, this.light, this.score);
   }
 }

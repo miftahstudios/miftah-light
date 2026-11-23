@@ -39,11 +39,24 @@
     <h1 class="logo">Madih Light</h1>
     <p class="tagline">Clear away the darkness, one beat at a time.</p>
     <div class="stack">
+      <button id="learn">Learn to Play</button>
       <button id="play" class="primary">Play</button>
       <button data-go="howto">How to Play</button>
       <button id="open-settings">Settings</button>
     </div>
   </section>
+
+  <!-- Tutorial banner: shows over the board while the tutorial runs -->
+  <div id="tutorial" hidden>
+    <div class="tut-card">
+      <p id="tut-step" class="tut-step"></p>
+      <p id="tut-text" class="tut-text"></p>
+      <p id="tut-hint" class="tut-hint" hidden></p>
+      <div class="tut-dots" id="tut-dots"><span></span><span></span><span></span><span></span></div>
+      <button id="tut-go" class="primary tut-go" hidden>Start the practice round</button>
+      <button id="tut-exit" class="tut-exit">Exit tutorial</button>
+    </div>
+  </div>
 
   <!-- How to play -->
   <section id="howto" class="panel panel-top" hidden>
@@ -60,7 +73,8 @@
       <li><strong>Finish the song.</strong> Reach the end with Light left to complete it and open the next song.</li>
     </ol>
     <p class="hint">Shadows move one square every beat and enter from the edges of the board.</p>
-    <button class="primary" data-go="levels">Choose a song</button>
+    <button id="howto-learn" class="primary">Start the tutorial</button>
+    <button data-go="levels">Choose a song</button>
   </section>
 
   <!-- 3-2-1 before a song -->
@@ -120,10 +134,10 @@
   <section id="results" class="panel panel-top" hidden>
     <h2 id="result-title"></h2>
     <p id="result-song" class="song-title" dir="auto"></p>
-    <p class="score"><span id="result-score">0</span><span id="new-best" class="tag" hidden>New best</span></p>
+    <p class="score"><span id="result-score">0</span><span id="new-best" class="tag" hidden>New best</span><span id="practice-tag" class="tag" hidden>Practice</span></p>
     <dl id="result-stats"></dl>
     <p id="unlocked" class="unlocked" hidden></p>
-    <div class="board-wrap">
+    <div id="board-wrap" class="board-wrap">
       <h3>Leaderboard</h3>
       <ol id="leaderboard" class="leaderboard"></ol>
     </div>

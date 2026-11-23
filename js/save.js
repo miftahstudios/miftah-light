@@ -5,6 +5,7 @@ const LEADERBOARD_SIZE = 10;
 const fresh = () => ({
   playerName: '',
   completedLevels: [],          // completed song ids
+  tutorialDone: false,          // interactive tutorial passed
   best: {},                     // "songId:difficulty" -> best score
   leaderboard: {},              // "songId:difficulty" -> [{ name, score, light, date }]
   settings: { volume: 1, offsetMs: 0, difficulty: 'normal' },
@@ -35,6 +36,9 @@ export const save = {
   setSetting(k, v) { data.settings[k] = v; persist(); },
 
   isCompleted: id => data.completedLevels.includes(id),
+  completed: () => data.completedLevels.length,
+  get tutorialDone() { return !!data.tutorialDone; },
+  setTutorialDone() { data.tutorialDone = true; persist(); },
   // Level 1 is always open; every later level opens when the one before it is completed.
   isUnlocked(songs, index) { return index === 0 || data.completedLevels.includes(songs[index - 1].id); },
   complete(id) { if (!data.completedLevels.includes(id)) { data.completedLevels.push(id); persist(); } },

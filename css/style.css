@@ -132,3 +132,22 @@ button.diff small { font-size: 11px; font-weight: 300; opacity: 0.85; }
 
 #lane { position: absolute; left: 16px; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); height: 44px;
   width: calc(100% - 32px); }
+
+/* Interactive tutorial banner (shows over the board; swipes pass through it) */
+#tutorial { position: fixed; top: calc(max(12px, env(safe-area-inset-top)) + 96px); left: 16px; right: 16px;
+  z-index: 5; text-align: center; pointer-events: none; }
+#tutorial[hidden] { display: none; }
+.tut-card { display: inline-block; max-width: 480px; background: rgba(3,8,5,0.85);
+  border: 1px solid rgba(212,175,55,0.55); border-radius: 16px; padding: 14px 18px; }
+.tut-step { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+.tut-text { margin: 0; font-size: 16px; line-height: 1.45; color: var(--text); }
+.tut-hint { margin: 8px 0 0; font-size: 13px; color: var(--blue); }
+.tut-hint[hidden] { display: none; }
+.tut-dots { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
+.tut-dots span { width: 10px; height: 10px; border-radius: 999px; border: 1px solid var(--gold); }
+.tut-dots span.done { background: var(--gold); }
+.tut-exit { pointer-events: auto; margin-top: 10px; min-width: 0; padding: 6px 14px; font-size: 13px; background: transparent; }
+.tut-go { pointer-events: auto; margin-top: 12px; }
+.tut-go[hidden] { display: none; }
+body.tutorial .judge { top: 40%; }
+body.tutorial .play-hint { display: none; }
